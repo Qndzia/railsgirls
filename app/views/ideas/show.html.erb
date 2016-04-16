@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @idea.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @idea.description %>
+</p>
+
+<p>
+  <strong>Picture:</strong>
+<%= image_tag(@idea.picture_url, :width => 600) if @idea.picture.present? %>
+</p>
+<p> <strong>Created at:</strong> 
+<%= time_ago_in_words(@idea.created_at) %>  ago
+<%= @idea.updated_at %>
+</p>
+<p> <strong>Rating:</strong> 
+<%= @idea.raiting.raiting if @idea.raiting.present?%> 
+</p>
+<p> <strong>Size:</strong> 
+<%= @idea.size if @idea.size.present?%> 
+</p>
+
+<%= link_to 'Edit', edit_idea_path(@idea) %> |
+<%= link_to 'Back', ideas_path %>
